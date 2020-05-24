@@ -3,18 +3,14 @@
 #!system=ios
 
 [Rule]
-#RULE-SET,https://raw.githubusercontent.com/maicoo-l/Surge/master/rules/media/TikTok.list
+RULE-SET,https://raw.githubusercontent.com/maicoo-l/Surge/master/rules/media/TikTok.list
 
 [URL Rewrite]
 (?<=_region=)CN(?=&) TW 307
-#(?<=&app_version=)16..(?=.?.?&) 1 307
-#(?<=\?version_code=)16..(?=.?.?&) 1 307
-#美区TikTok，升级后将15改成对应的版本号
-#(?<=_region=)CN(?=&) KR 307
-#(?<=_region=)CN(?=&) JP 307
+
 (?<=&app_version=)16..(?=.?.?&) 1 307
 (?<=\?version_code=)16..(?=.?.?&) 1 307
-# TikTok去水印
+
 (.*video_id=\w{32})(.*watermark=)(.*) $1 302
 [MITM]
 hostname = %APPEND% *.snssdk.com, *.amemv.com, *.akamaized.net, *.appsflyer.com, *.tiktokv.com, *.muscdn.com, *.byteoversea.com, *.musical.ly, *.ibyteimg.com, *.app-measurement.com
