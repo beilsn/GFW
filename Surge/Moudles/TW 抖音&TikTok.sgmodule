@@ -3,7 +3,7 @@
 #!system=ios
 
 [Rule]
-RULE-SET,https://raw.githubusercontent.com/maicoo-l/Surge/master/rules/media/TikTok.list
+#RULE-SET,https://raw.githubusercontent.com/maicoo-l/Surge/master/rules/media/TikTok.list
 
 [URL Rewrite]
 (?<=_region=)CN(?=&) TW 307
